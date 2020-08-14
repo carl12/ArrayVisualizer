@@ -18,8 +18,8 @@ public class BubbleSort implements Sort {
         for(int i = ac.length-1; i > 0; i--){
             for(int j = 0; j < i; j++){
                 sleep(0.005);
+                ac.comps++;
                 if(ac.array[j]>ac.array[j+1]){
-                    ac.comps++;
                     swap(ac, j, j+1, 0.01);
                 }else{
                     ac.marked.set(1, j+1);

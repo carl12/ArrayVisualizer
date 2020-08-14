@@ -19,40 +19,41 @@ public class MergeSort implements Sort {
     static void merge(final ArrayController ac, int min, int max, int mid){
         try {
             //radixLSDsortnd(2, min, max);
-                
-            
+
+
                     int i=min;
                     while(i<=mid){
+                            ac.comps++;
                             if(ac.array[i]>ac.array[mid+1]){
-                                ac.comps++;
                                     swap(ac, i, mid+1, 1.5);
                                     push(ac, mid+1, max);
                             }
                             i++;
-                    }		
-                    
+                    }
+
         } catch (Exception ex) {
             Logger.getLogger(ArrayVisualizer.class.getName()).log(Level.SEVERE, null, ex);
         }
 	}
-    
+
     static void push(final ArrayController ac, int s, int e){
-        
+
 		for(int i=s;i<e;i++){
+            ac.comps++;
 			if(ac.array[i]>ac.array[i+1]){
-                ac.comps++;
                             swap(ac, i, i+1, 0.0175);
                         }
 		}
-                
-                
+
+
 	}
-    
+
     public static void mergeSort(final ArrayController ac, int min, int max){
 	if(max-min==0){//only one element.
 		//no swap
 	}
 	else if(max-min==1){//only two elements and swaps them
+            ac.comps++;
             if(ac.array[min]>ac.array[max])
                 swap(ac, min, max);
 	}

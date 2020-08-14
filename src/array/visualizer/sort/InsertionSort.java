@@ -21,13 +21,14 @@ public class InsertionSort implements Sort {
             ac.marked.set(1, i);
             ac.marked.set(2, -5);
             while(pos>0&&ac.array[pos]<=ac.array[pos-1]){
-                ac.comps+=2;
+                ac.comps+=1;
                 swap(ac, pos, pos-1, 0.02);
                 pos--;
             }
+            ac.comps+=1;
         }
     }
-    
+
     public static void insertionSort(final ArrayController ac, int start, int end, double slpamt) {
         int pos;
         for(int i = start; i < end; i++){
@@ -35,11 +36,12 @@ public class InsertionSort implements Sort {
             ac.marked.set(1, i);
             ac.marked.set(2, -5);
             while(pos>start&&ac.array[pos]<=ac.array[pos-1]){
-                ac.comps+=2;
-                    swap(ac, pos, pos-1);
-                    sleep(slpamt);
-                    pos--;
+                ac.comps+=1;
+                swap(ac, pos, pos-1);
+                sleep(slpamt);
+                pos--;
             }
+            ac.comps+=1;
         }
     }
 

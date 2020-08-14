@@ -38,15 +38,17 @@ public class QuickSort implements Sort {
                 i++;
                 ac.marked.set(1, i);
                 sleep(0.45);
-                ac.comps+=2;
+                ac.comps+=1;
             }
+            ac.comps+=1;
             j--;
             while (j>p && ac.array[j] > x){
                 j--;
                 ac.marked.set(2, j);
                 sleep(0.45);
-                ac.comps+=2;
+                ac.comps+=1;
             }
+            ac.comps+=1;
 
             if (i < j)
                 swap(ac, i, j);
